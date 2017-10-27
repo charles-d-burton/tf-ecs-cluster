@@ -1,7 +1,7 @@
 AWS ECS Spot Fleet Request
 =================================
 
-Terraform module which creates an autoscaling Spot Fleet on AWS.
+Terraform module which creates an autoscaling Spot Fleet and an ECS Cluster on AWS.
 
 
 Usage
