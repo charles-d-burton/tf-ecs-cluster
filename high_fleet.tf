@@ -196,7 +196,7 @@ resource "aws_spot_fleet_request" "moderate_fleet" {
     spot_price             = "0.20"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${data.aws_subnet_ids.ids[0]}"
+    subnet_id              = "${join(",", var.subnet_ids)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
