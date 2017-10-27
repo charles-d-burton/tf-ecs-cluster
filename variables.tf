@@ -63,11 +63,6 @@ variable "high_fleet" {
   default     = false
 }
 
-variable "diverse_fleet" {
-  description = "Set to true to create a diverse fleet"
-  default     = false
-}
-
 /*
 CloudWatch configurations.
 */
