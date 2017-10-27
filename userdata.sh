@@ -10,7 +10,7 @@ mkdir -p /opt/consul
 #####
 #cat << EOF > /etc/consul.d/000-consul.json
 # {
-#  "encrypt": "Mcf/PLw6gLjn+jnGvSbXuQ==",
+#  "encrypt": "<some_key>",
 #  "server": false,
 #  "datacenter": "${region}",
 #  "data_dir": "/var/lib/consul",

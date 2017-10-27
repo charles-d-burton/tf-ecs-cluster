@@ -1,16 +1,16 @@
 #Cloudwatch autoscaling and monitoring
 resource "aws_cloudwatch_metric_alarm" "ecs_cluster_cpu_util_cloudwatch" {
-  alarm_name          = "ecs-${var.env}-${var.region} ${var.CPUUtil_metric_name}"
-  comparison_operator = "${var.CPUUtil_comparison_operator}"
-  evaluation_periods  = "${var.CPUUtil_evaluation_periods}"
-  metric_name         = "${var.CPUUtil_metric_name}"
-  namespace           = "${var.CPUUtil_namespace}"
-  period              = "${var.CPUUtil_period}"
-  statistic           = "${var.CPUUtil_statistic}"
-  threshold           = "${var.CPUUtil_threshold}"
+  alarm_name          = "ecs-${var.env}-${var.region} ${var.cpu_util_metric_name}"
+  comparison_operator = "${var.cpu_util_comparison_operator}"
+  evaluation_periods  = "${var.cpu_util_evaluation_periods}"
+  metric_name         = "${var.cpu_util_metric_name}"
+  namespace           = "${var.cpu_util_namespace}"
+  period              = "${var.cpu_util_period}"
+  statistic           = "${var.cpu_util_statistic}"
+  threshold           = "${var.cpu_util_threshold}"
   alarm_actions       = "${var.notification}"
 
-  alarm_description = "CloudWatch metric alarm: ecs-${var.env}-${var.region} ${var.CPUUtil_metric_name} ${var.CPUUtil_comparison_operator}"
+  alarm_description = "CloudWatch metric alarm: ecs-${var.env}-${var.region} ${var.cpu_util_metric_name} ${var.cpu_util_comparison_operator}"
 
   dimensions {
     ClusterName = "ecs-${var.env}-${var.region}"
@@ -18,17 +18,17 @@ resource "aws_cloudwatch_metric_alarm" "ecs_cluster_cpu_util_cloudwatch" {
 }
 
 resource "aws_cloudwatch_metric_alarm" "ecs_cluster_mem_util_cloudwatch" {
-  alarm_name          = "ecs-${var.env}-${var.region} ${var.MemoryUtil_metric_name}"
-  comparison_operator = "${var.MemoryUtil_comparison_operator}"
-  evaluation_periods  = "${var.MemoryUtil_evaluation_periods}"
-  metric_name         = "${var.MemoryUtil_metric_name}"
-  namespace           = "${var.MemoryUtil_namespace}"
-  period              = "${var.MemoryUtil_period}"
-  statistic           = "${var.MemoryUtil_statistic}"
-  threshold           = "${var.MemoryUtil_threshold}"
+  alarm_name          = "ecs-${var.env}-${var.region} ${var.memory_util_metric_name}"
+  comparison_operator = "${var.memory_util_comparison_operator}"
+  evaluation_periods  = "${var.memory_util_evaluation_periods}"
+  metric_name         = "${var.memory_util_metric_name}"
+  namespace           = "${var.memory_util_namespace}"
+  period              = "${var.memory_util_period}"
+  statistic           = "${var.memory_util_statistic}"
+  threshold           = "${var.memory_util_threshold}"
   alarm_actions       = "${var.notification}"
 
-  alarm_description = "CloudWatch metric alarm: ecs-${var.env}-${var.region} ${var.MemoryUtil_metric_name} ${var.MemoryUtil_comparison_operator}"
+  alarm_description = "CloudWatch metric alarm: ecs-${var.env}-${var.region} ${var.memory_util_metric_name} ${var.memory_util_comparison_operator}"
 
   dimensions {
     ClusterName = "ecs-${var.env}-${var.region}"
@@ -45,34 +45,40 @@ resource "aws_appautoscaling_target" "service_target" {
 }
 
 resource "aws_appautoscaling_policy" "service_down_policy" {
-  adjustment_type         = "ChangeInCapacity"
-  cooldown                = 60
-  metric_aggregation_type = "Minimum"
-  name                    = "scale-down-ecs-${var.env}-${var.region}"
-  resource_id             = "spot-fleet-request/${aws_spot_fleet_request.fleet.id}"
-  scalable_dimension      = "ec2:spot-fleet-request:TargetCapacity"
-  service_namespace       = "ec2"
+  name               = "scale-down-ecs-${var.env}-${var.region}"
+  resource_id        = "spot-fleet-request/${aws_spot_fleet_request.fleet.id}"
+  scalable_dimension = "ec2:spot-fleet-request:TargetCapacity"
+  service_namespace  = "ec2"
 
-  step_adjustment {
-    metric_interval_upper_bound = 0
-    scaling_adjustment          = -2
+  step_scaling_policy_configuration {
+    adjustment_type         = "ChangeInCapacity"
+    cooldown                = 60
+    metric_aggregation_type = "Minimum"
+
+    step_adjustment {
+      metric_interval_upper_bound = 0
+      scaling_adjustment          = -2
+    }
   }
 
   depends_on = ["aws_appautoscaling_target.service_target"]
 }
 
 resource "aws_appautoscaling_policy" "service_up_policy" {
-  adjustment_type         = "ChangeInCapacity"
-  cooldown                = 60
-  metric_aggregation_type = "Maximum"
-  name                    = "scale-up-ecs-${var.env}-${var.region}"
-  resource_id             = "spot-fleet-request/${aws_spot_fleet_request.fleet.id}"
-  scalable_dimension      = "ec2:spot-fleet-request:TargetCapacity"
-  service_namespace       = "ec2"
+  name               = "scale-up-ecs-${var.env}-${var.region}"
+  resource_id        = "spot-fleet-request/${aws_spot_fleet_request.fleet.id}"
+  scalable_dimension = "ec2:spot-fleet-request:TargetCapacity"
+  service_namespace  = "ec2"
 
-  step_adjustment {
-    metric_interval_lower_bound = 0
-    scaling_adjustment          = 5
+  step_scaling_policy_configuration {
+    adjustment_type         = "ChangeInCapacity"
+    cooldown                = 60
+    metric_aggregation_type = "Maximum"
+
+    step_adjustment {
+      metric_interval_lower_bound = 0
+      scaling_adjustment          = 5
+    }
   }
 
   depends_on = ["aws_appautoscaling_target.service_target"]

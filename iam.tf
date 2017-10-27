@@ -1,7 +1,7 @@
 # Create the IAM Roles
 resource "aws_iam_instance_profile" "ecs" {
-  name  = "ecs-instance-${var.region}"
-  roles = ["${aws_iam_role.spot_instance_role.name}"]
+  name = "ecs-instance-${var.region}"
+  role = "${aws_iam_role.spot_instance_role.name}"
 }
 
 resource "aws_iam_role" "spot_fleet_role" {

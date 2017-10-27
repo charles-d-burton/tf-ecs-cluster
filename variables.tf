@@ -12,16 +12,28 @@ variable "amis" {
   type = "map"
 
   default = {
-    us-east-1 = "ami-ec33cc96"
-    us-east-2 = "ami-34032e51"
-    us-west-1 = "ami-d5d0e0b5"
-    us-west-2 = "ami-29f80351"
+    us-east-1      = "ami-ec33cc96"
+    us-east-2      = "ami-34032e51"
+    us-west-1      = "ami-d5d0e0b5"
+    us-west-2      = "ami-29f80351"
+    eu-west-2      = "ami-eb62708f"
+    eu-west-1      = "ami-13f7226a"
+    eu-central-1   = "ami-40d5672f"
+    ap-northeast-2 = "ami-7ee13b10"
+    ap-northeast-1 = "ami-21815747"
+    ap-southeast-2 = "ami-4f08e82d"
+    ap-southeast-1 = "ami-99f588fa"
+    ca-central-1   = "ami-9b54edff"
   }
 }
 
-variable "subnets" {
+variable "subnet_ids" {
   type = "list"
 }
+
+variable "vpc_id" {}
+
+variable "key_name" {}
 
 #Re-enable once consul cluster is available
 //variable "consul_instance_sg" {}
@@ -36,63 +48,83 @@ variable "volume_size" {
   default = "40"
 }
 
+variable "micro_fleet" {
+  description = "Set to true to create a micro fleet"
+  default     = false
+}
+
+variable "moderate_fleet" {
+  desription = "Set to true to create a moderate fleet"
+  default    = false
+}
+
+variable "high_fleet" {
+  description = "Set to true to create a high fleet"
+  default     = false
+}
+
+variable "diverse_fleet" {
+  description = "Set to true to create a diverse fleet"
+  default     = false
+}
+
 /*
 CloudWatch configurations.
 */
 
-variable "CPUUtil_metric_name" {
-  default = ""
+variable "cpu_util_metric_name" {
+  default = "CPUUtilization"
 }
 
-variable "CPUUtil_period" {
+variable "cpu_util_period" {
   default = 60
 }
 
-variable "CPUUtil_evaluation_periods" {
+variable "cpu_util_evaluation_periods" {
   default = 2
 }
 
-variable "CPUUtil_threshold" {
-  default = 2
+variable "cpu_util_threshold" {
+  default = 80
 }
 
-variable "CPUUtil_namespace" {
+variable "cpu_util_namespace" {
   default = "AWS/ECS"
 }
 
-variable "CPUUtil_comparison_operator" {
+variable "cpu_util_comparison_operator" {
   default = "GreaterThanOrEqualToThreshold"
 }
 
-variable "CPUUtil_statistic" {
+variable "cpu_util_statistic" {
   default = "Average"
 }
 
-variable "MemoryUtil_metric_name" {
-  default = ""
+variable "memory_util_metric_name" {
+  default = "MemoryUtilization"
 }
 
-variable "MemoryUtil_period" {
+variable "memory_util_period" {
   default = 60
 }
 
-variable "MemoryUtil_evaluation_periods" {
+variable "memory_util_evaluation_periods" {
   default = 2
 }
 
-variable "MemoryUtil_threshold" {
-  default = 2
+variable "memory_util_threshold" {
+  default = 80
 }
 
-variable "MemoryUtil_namespace" {
+variable "memory_util_namespace" {
   default = "AWS/ECS"
 }
 
-variable "MemoryUtil_comparison_operator" {
+variable "memory_util_comparison_operator" {
   default = "GreaterThanOrEqualToThreshold"
 }
 
-variable "MemoryUtil_statistic" {
+variable "memory_util_statistic" {
   default = "Average"
 }
 

@@ -137,11 +137,5 @@ data "aws_iam_policy_document" "spot_fleet_autoscaling_role" {
 }
 
 data "aws_vpc" "vpc" {
-  tags = {
-    Name = "tf-${var.env}-${var.region}"
-  }
-}
-
-data "aws_subnet_ids" "subnet_ids" {
-  vpc_id = "${data.aws_vpc.vpc.id}"
+  id = "${var.vpc_id}"
 }
