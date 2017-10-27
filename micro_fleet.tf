@@ -6,7 +6,7 @@ resource "aws_spot_fleet_request" "micro_fleet" {
   count               = "${var.micro_fleet}"
   iam_fleet_role      = "${aws_iam_role.spot_fleet_role.arn}"
   spot_price          = "${var.max_price}"
-  allocation_strategy = "lowest_price"
+  allocation_strategy = "lowestPrice"
   target_capacity     = "${var.cluster_size}"
   valid_until         = "${var.valid_until}"
 
