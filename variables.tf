@@ -54,8 +54,8 @@ variable "micro_fleet" {
 }
 
 variable "moderate_fleet" {
-  desription = "Set to true to create a moderate fleet"
-  default    = false
+  description = "Set to true to create a moderate fleet"
+  default     = false
 }
 
 variable "high_fleet" {
