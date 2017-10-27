@@ -269,7 +269,7 @@ resource "aws_cloudwatch_metric_alarm" "moderate_fleet_service_highcpu_scaleup" 
   }
 
   alarm_actions = [
-    "${aws_appautoscaling_policy.service_up_policy.arn}",
+    "${aws_appautoscaling_policy.moderate_fleet_service_up_policy.arn}",
   ]
 
   depends_on = ["aws_appautoscaling_policy.moderate_fleet_service_up_policy"]
@@ -293,7 +293,7 @@ resource "aws_cloudwatch_metric_alarm" "moderate_fleet_service_highcpu_scaledown
   }
 
   alarm_actions = [
-    "${aws_appautoscaling_policy.service_down_policy.arn}",
+    "${aws_appautoscaling_policy.moderate_fleet_service_down_policy.arn}",
   ]
 
   depends_on = ["aws_appautoscaling_policy.moderate_fleet_service_down_policy"]
