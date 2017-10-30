@@ -23,7 +23,6 @@ resource "aws_spot_fleet_request" "high_fleet" {
       volume_type           = "gp2"
       volume_size           = "8"
       delete_on_termination = "true"
-      snapshot_id           = "snap-adca7883"
       device_name           = "/dev/xvda"
     }
 
@@ -53,7 +52,6 @@ resource "aws_spot_fleet_request" "high_fleet" {
       volume_type           = "gp2"
       volume_size           = "8"
       delete_on_termination = "true"
-      snapshot_id           = "snap-adca7883"
       device_name           = "/dev/xvda"
     }
 
@@ -83,7 +81,6 @@ resource "aws_spot_fleet_request" "high_fleet" {
       volume_type           = "gp2"
       volume_size           = "8"
       delete_on_termination = "true"
-      snapshot_id           = "snap-adca7883"
       device_name           = "/dev/xvda"
     }
 
@@ -113,7 +110,6 @@ resource "aws_spot_fleet_request" "high_fleet" {
       volume_type           = "gp2"
       volume_size           = "8"
       delete_on_termination = "true"
-      snapshot_id           = "snap-adca7883"
       device_name           = "/dev/xvda"
     }
 
@@ -144,7 +140,6 @@ resource "aws_spot_fleet_request" "high_fleet" {
       volume_type           = "gp2"
       volume_size           = "8"
       delete_on_termination = "true"
-      snapshot_id           = "snap-adca7883"
       device_name           = "/dev/xvda"
     }
 
@@ -175,7 +170,6 @@ resource "aws_spot_fleet_request" "high_fleet" {
       volume_type           = "gp2"
       volume_size           = "8"
       delete_on_termination = "true"
-      snapshot_id           = "snap-adca7883"
       device_name           = "/dev/xvda"
     }
 
@@ -204,7 +198,6 @@ resource "aws_spot_fleet_request" "high_fleet" {
       volume_type           = "gp2"
       volume_size           = "8"
       delete_on_termination = "true"
-      snapshot_id           = "snap-adca7883"
       device_name           = "/dev/xvda"
     }
 
