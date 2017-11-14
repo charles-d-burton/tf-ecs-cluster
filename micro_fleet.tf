@@ -204,7 +204,7 @@ resource "aws_cloudwatch_metric_alarm" "micro_fleet_service_highcpu_scaledown" {
   }
 
   alarm_actions = [
-    "${aws_appautoscaling_policy.micro_fleet_service_down_policy.arn}",
+    "arn:aws:sns:us-west-2:1234567890:no-alarm",
   ]
 
   depends_on = ["aws_appautoscaling_policy.micro_fleet_service_down_policy"]
