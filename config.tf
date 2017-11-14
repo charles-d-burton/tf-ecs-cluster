@@ -66,6 +66,20 @@ data "aws_iam_policy_document" "spot_fleet_policy" {
       "*",
     ]
   }
+
+  statement {
+    effect = "Allow"
+
+    actions = [
+      "logs:PutLogEvents",
+      "logs:CreateLogStream",
+      "logs:CreateLogGroup",
+    ]
+
+    resources = [
+      "*",
+    ]
+  }
 }
 
 #Define the policy document for the instances attached to the spot fleet
@@ -96,6 +110,7 @@ data "aws_iam_policy_document" "spot_fleet_instance_policy" {
       "ec2:RequestSpotFleet",
       "logs:CreateLogStream",
       "logs:PutLogEvents",
+      "logs:CreateLogGroup",
     ]
 
     resources = [
@@ -114,6 +129,8 @@ data "aws_iam_policy_document" "spot_fleet_autoscaling_policy" {
       "ec2:ModifySpotFleetRequest",
       "cloudwatch:DescribeAlarms",
       "cloudwatch:PutMetricAlarm",
+      "cloudwatch:GetMetricStatistics",
+      "cloudwatch:ListMetrics",
     ]
 
     resources = [
