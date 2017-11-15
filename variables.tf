@@ -48,21 +48,6 @@ variable "volume_size" {
   default = "40"
 }
 
-variable "micro_fleet" {
-  description = "Set to true to create a micro fleet"
-  default     = false
-}
-
-variable "moderate_fleet" {
-  description = "Set to true to create a moderate fleet"
-  default     = false
-}
-
-variable "high_fleet" {
-  description = "Set to true to create a high fleet"
-  default     = false
-}
-
 /*
 CloudWatch configurations.
 */
