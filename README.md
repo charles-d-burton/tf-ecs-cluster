@@ -17,8 +17,6 @@ module "ecs_request" {
   subnet_ids   = [<list of subnets>]
   key_name     = "dev"
 
-  moderate_fleet = "true"
-
   notification = ["arn:aws:sns:us-east-1:1234567890:no-alarm"]
 }
 ```
