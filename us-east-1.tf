@@ -18,7 +18,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[0]}"
+    subnet_id              = "${element(var.subnet_ids, 0)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -44,7 +44,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[1]}"
+    subnet_id              = "${element(var.subnet_ids, 1)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -70,7 +70,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[2]}"
+    subnet_id              = "${element(var.subnet_ids, 2)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -96,7 +96,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[3]}"
+    subnet_id              = "${element(var.subnet_ids, 3)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -122,7 +122,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[4]}"
+    subnet_id              = "${element(var.subnet_ids, 4)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -148,7 +148,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[5]}"
+    subnet_id              = "${element(var.subnet_ids, 5)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -177,7 +177,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[0]}"
+    subnet_id              = "${element(var.subnet_ids, 0)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -203,7 +203,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[1]}"
+    subnet_id              = "${element(var.subnet_ids, 1)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -229,7 +229,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[2]}"
+    subnet_id              = "${element(var.subnet_ids, 2)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -255,7 +255,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[3]}"
+    subnet_id              = "${element(var.subnet_ids, 3)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -281,7 +281,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[4]}"
+    subnet_id              = "${element(var.subnet_ids, 4)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -307,7 +307,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[5]}"
+    subnet_id              = "${element(var.subnet_ids, 5)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -336,7 +336,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.15"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[0]}"
+    subnet_id              = "${element(var.subnet_ids, 0)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -362,7 +362,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.15"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[1]}"
+    subnet_id              = "${element(var.subnet_ids, 1)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -388,7 +388,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.15"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[2]}"
+    subnet_id              = "${element(var.subnet_ids, 2)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -414,7 +414,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.15"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[3]}"
+    subnet_id              = "${element(var.subnet_ids, 3)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -440,7 +440,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.15"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[4]}"
+    subnet_id              = "${element(var.subnet_ids, 4)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -466,7 +466,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.15"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[5]}"
+    subnet_id              = "${element(var.subnet_ids, 5)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -495,7 +495,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.17"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[0]}"
+    subnet_id              = "${element(var.subnet_ids, 0)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -521,7 +521,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.17"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[1]}"
+    subnet_id              = "${element(var.subnet_ids, 1)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -547,7 +547,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.17"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[2]}"
+    subnet_id              = "${element(var.subnet_ids, 2)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -573,7 +573,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.17"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[3]}"
+    subnet_id              = "${element(var.subnet_ids, 3)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -599,7 +599,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.17"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[4]}"
+    subnet_id              = "${element(var.subnet_ids, 4)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -625,7 +625,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.17"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[5]}"
+    subnet_id              = "${element(var.subnet_ids, 5)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -655,7 +655,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[0]}"
+    subnet_id              = "${element(var.subnet_ids, 0)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -680,7 +680,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[1]}"
+    subnet_id              = "${element(var.subnet_ids, 1)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -705,7 +705,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[2]}"
+    subnet_id              = "${element(var.subnet_ids, 2)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -730,7 +730,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[3]}"
+    subnet_id              = "${element(var.subnet_ids, 3)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -755,7 +755,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[4]}"
+    subnet_id              = "${element(var.subnet_ids, 4)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -780,7 +780,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[5]}"
+    subnet_id              = "${element(var.subnet_ids, 5)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -810,7 +810,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[0]}"
+    subnet_id              = "${element(var.subnet_ids, 0)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -835,7 +835,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[1]}"
+    subnet_id              = "${element(var.subnet_ids, 1)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -860,7 +860,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[2]}"
+    subnet_id              = "${element(var.subnet_ids, 2)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -885,7 +885,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[3]}"
+    subnet_id              = "${element(var.subnet_ids, 3)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -910,7 +910,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[4]}"
+    subnet_id              = "${element(var.subnet_ids, 4)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -935,7 +935,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[5]}"
+    subnet_id              = "${element(var.subnet_ids, 5)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -963,7 +963,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.20"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[0]}"
+    subnet_id              = "${element(var.subnet_ids, 0)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -988,7 +988,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.20"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[1]}"
+    subnet_id              = "${element(var.subnet_ids, 1)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -1013,7 +1013,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.20"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[2]}"
+    subnet_id              = "${element(var.subnet_ids, 2)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -1038,7 +1038,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.20"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[3]}"
+    subnet_id              = "${element(var.subnet_ids, 3)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -1063,7 +1063,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.20"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[4]}"
+    subnet_id              = "${element(var.subnet_ids, 4)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
@@ -1088,7 +1088,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
     spot_price             = "0.20"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
-    subnet_id              = "${var.subnet_ids[5]}"
+    subnet_id              = "${element(var.subnet_ids, 5)}"
     vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
 
     ebs_block_device = {
