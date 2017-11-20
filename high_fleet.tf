@@ -1,10 +1,12 @@
 #Generate the spot fleet request, loads Userdata to each instance to join it to the cluster
 resource "aws_spot_fleet_request" "high_fleet" {
-  iam_fleet_role      = "${aws_iam_role.spot_fleet_role.arn}"
-  spot_price          = "${var.max_price}"
-  allocation_strategy = "diversified"
-  target_capacity     = "${var.cluster_size}"
-  valid_until         = "${var.valid_until}"
+  iam_fleet_role              = "${aws_iam_role.spot_fleet_role.arn}"
+  spot_price                  = "${var.max_price}"
+  allocation_strategy         = "diversified"
+  target_capacity             = "${var.cluster_size}"
+  valid_until                 = "${var.valid_until}"
+  replace_unhealthy_instances = true
+  wait_for_fulfillment        = true
 
   ######################
   #m4.large
@@ -209,8 +211,7 @@ resource "aws_spot_fleet_request" "high_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
-  #depends_on = ["aws_iam_role.spot_instance_role", "aws_iam_role.spot_fleet_role"]
+  depends_on = ["aws_iam_role.spot_instance_role", "aws_iam_role.spot_fleet_role"]
 }
 
 #Cloudwatch autoscaling and monitoring
@@ -276,7 +277,7 @@ resource "aws_appautoscaling_policy" "high_fleet_service_down_policy" {
     }
   }
 
-  #depends_on = ["aws_appautoscaling_target.high_fleet_service_target"]
+  depends_on = ["aws_appautoscaling_target.high_fleet_service_target"]
 }
 
 resource "aws_appautoscaling_policy" "high_fleet_service_up_policy" {
@@ -296,7 +297,7 @@ resource "aws_appautoscaling_policy" "high_fleet_service_up_policy" {
     }
   }
 
-  #depends_on = ["aws_appautoscaling_target.high_fleet_service_target"]
+  depends_on = ["aws_appautoscaling_target.high_fleet_service_target"]
 }
 
 resource "aws_cloudwatch_metric_alarm" "high_fleet_service_highcpu_scaleup" {
@@ -319,7 +320,7 @@ resource "aws_cloudwatch_metric_alarm" "high_fleet_service_highcpu_scaleup" {
     "${aws_appautoscaling_policy.high_fleet_service_up_policy.arn}",
   ]
 
-  #depends_on = ["aws_appautoscaling_policy.high_fleet_service_up_policy"]
+  depends_on = ["aws_appautoscaling_policy.high_fleet_service_up_policy"]
 }
 
 resource "aws_cloudwatch_metric_alarm" "high_fleet_service_highcpu_scaledown" {
@@ -342,5 +343,5 @@ resource "aws_cloudwatch_metric_alarm" "high_fleet_service_highcpu_scaledown" {
     "${aws_appautoscaling_policy.high_fleet_service_down_policy.arn}",
   ]
 
-  #depends_on = ["aws_appautoscaling_policy.high_fleet_service_down_policy"]
+  depends_on = ["aws_appautoscaling_policy.high_fleet_service_down_policy"]
 }
