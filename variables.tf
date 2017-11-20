@@ -28,7 +28,8 @@ variable "amis" {
 }
 
 variable "subnet_ids" {
-  type = "list"
+  type    = "list"
+  default = []
 }
 
 variable "vpc_id" {}
