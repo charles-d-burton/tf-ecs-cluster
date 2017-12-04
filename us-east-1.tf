@@ -8,7 +8,10 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   valid_until                 = "${var.valid_until}"
   replace_unhealthy_instances = true
   wait_for_fulfillment        = true
-  create_before_destroy       = true
+
+  lifecycle {
+    create_before_destroy = true
+  }
 
   ######################
   #m4.large
