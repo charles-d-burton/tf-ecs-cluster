@@ -169,6 +169,165 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   }
 
   ######################
+  #m5.large
+  ######################
+  launch_specification {
+    instance_type          = "m5.large"
+    ami                    = "${lookup(var.amis, var.region)}"
+    spot_price             = "0.12"
+    key_name               = "${var.env}-${var.region}"
+    iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
+    subnet_id              = "${element(var.subnet_ids, 0)}"
+    vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "8"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvda"
+    }
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "${var.volume_size}"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvdcz"
+    }
+
+    user_data = "${data.template_file.userdata.rendered}"
+  }
+
+  launch_specification {
+    instance_type          = "m5.large"
+    ami                    = "${lookup(var.amis, var.region)}"
+    spot_price             = "0.12"
+    key_name               = "${var.env}-${var.region}"
+    iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
+    subnet_id              = "${element(var.subnet_ids, 1)}"
+    vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "8"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvda"
+    }
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "${var.volume_size}"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvdcz"
+    }
+
+    user_data = "${data.template_file.userdata.rendered}"
+  }
+
+  launch_specification {
+    instance_type          = "m5.large"
+    ami                    = "${lookup(var.amis, var.region)}"
+    spot_price             = "0.12"
+    key_name               = "${var.env}-${var.region}"
+    iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
+    subnet_id              = "${element(var.subnet_ids, 2)}"
+    vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "8"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvda"
+    }
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "${var.volume_size}"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvdcz"
+    }
+
+    user_data = "${data.template_file.userdata.rendered}"
+  }
+
+  launch_specification {
+    instance_type          = "m5.large"
+    ami                    = "${lookup(var.amis, var.region)}"
+    spot_price             = "0.12"
+    key_name               = "${var.env}-${var.region}"
+    iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
+    subnet_id              = "${element(var.subnet_ids, 3)}"
+    vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "8"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvda"
+    }
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "${var.volume_size}"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvdcz"
+    }
+
+    user_data = "${data.template_file.userdata.rendered}"
+  }
+
+  launch_specification {
+    instance_type          = "m5.large"
+    ami                    = "${lookup(var.amis, var.region)}"
+    spot_price             = "0.12"
+    key_name               = "${var.env}-${var.region}"
+    iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
+    subnet_id              = "${element(var.subnet_ids, 4)}"
+    vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "8"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvda"
+    }
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "${var.volume_size}"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvdcz"
+    }
+
+    user_data = "${data.template_file.userdata.rendered}"
+  }
+
+  launch_specification {
+    instance_type          = "m5.large"
+    ami                    = "${lookup(var.amis, var.region)}"
+    spot_price             = "0.12"
+    key_name               = "${var.env}-${var.region}"
+    iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
+    subnet_id              = "${element(var.subnet_ids, 5)}"
+    vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "8"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvda"
+    }
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "${var.volume_size}"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvdcz"
+    }
+
+    user_data = "${data.template_file.userdata.rendered}"
+  }
+
+  ######################
   #c4.large
   ######################
   launch_specification {
@@ -303,6 +462,165 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "c4.large"
+    ami                    = "${lookup(var.amis, var.region)}"
+    spot_price             = "0.12"
+    key_name               = "${var.env}-${var.region}"
+    iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
+    subnet_id              = "${element(var.subnet_ids, 5)}"
+    vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "8"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvda"
+    }
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "${var.volume_size}"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvdcz"
+    }
+
+    user_data = "${data.template_file.userdata.rendered}"
+  }
+
+  ######################
+  #c5.large
+  ######################
+  launch_specification {
+    instance_type          = "c5.large"
+    ami                    = "${lookup(var.amis, var.region)}"
+    spot_price             = "0.12"
+    key_name               = "${var.env}-${var.region}"
+    iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
+    subnet_id              = "${element(var.subnet_ids, 0)}"
+    vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "8"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvda"
+    }
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "${var.volume_size}"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvdcz"
+    }
+
+    user_data = "${data.template_file.userdata.rendered}"
+  }
+
+  launch_specification {
+    instance_type          = "c5.large"
+    ami                    = "${lookup(var.amis, var.region)}"
+    spot_price             = "0.12"
+    key_name               = "${var.env}-${var.region}"
+    iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
+    subnet_id              = "${element(var.subnet_ids, 1)}"
+    vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "8"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvda"
+    }
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "${var.volume_size}"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvdcz"
+    }
+
+    user_data = "${data.template_file.userdata.rendered}"
+  }
+
+  launch_specification {
+    instance_type          = "c5.large"
+    ami                    = "${lookup(var.amis, var.region)}"
+    spot_price             = "0.12"
+    key_name               = "${var.env}-${var.region}"
+    iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
+    subnet_id              = "${element(var.subnet_ids, 2)}"
+    vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "8"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvda"
+    }
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "${var.volume_size}"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvdcz"
+    }
+
+    user_data = "${data.template_file.userdata.rendered}"
+  }
+
+  launch_specification {
+    instance_type          = "c5.large"
+    ami                    = "${lookup(var.amis, var.region)}"
+    spot_price             = "0.12"
+    key_name               = "${var.env}-${var.region}"
+    iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
+    subnet_id              = "${element(var.subnet_ids, 3)}"
+    vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "8"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvda"
+    }
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "${var.volume_size}"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvdcz"
+    }
+
+    user_data = "${data.template_file.userdata.rendered}"
+  }
+
+  launch_specification {
+    instance_type          = "c5.large"
+    ami                    = "${lookup(var.amis, var.region)}"
+    spot_price             = "0.12"
+    key_name               = "${var.env}-${var.region}"
+    iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
+    subnet_id              = "${element(var.subnet_ids, 4)}"
+    vpc_security_group_ids = ["${aws_security_group.ecs_instance_security_group.id}"]
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "8"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvda"
+    }
+
+    ebs_block_device = {
+      volume_type           = "gp2"
+      volume_size           = "${var.volume_size}"
+      delete_on_termination = "true"
+      device_name           = "/dev/xvdcz"
+    }
+
+    user_data = "${data.template_file.userdata.rendered}"
+  }
+
+  launch_specification {
+    instance_type          = "c5.large"
     ami                    = "${lookup(var.amis, var.region)}"
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
