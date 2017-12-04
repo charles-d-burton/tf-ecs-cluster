@@ -9,9 +9,10 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   replace_unhealthy_instances = true
   wait_for_fulfillment        = true
 
-  lifecycle {
+  #TODO: Figure this out, relationship to other resources is problem
+  /* lifecycle {
     create_before_destroy = true
-  }
+  } */
 
   ######################
   #m4.large
@@ -41,7 +42,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "m4.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -67,7 +67,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "m4.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -93,7 +92,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "m4.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -119,7 +117,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "m4.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -145,7 +142,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "m4.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -171,7 +167,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   ######################
   #m5.large
   ######################
@@ -200,7 +195,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "m5.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -226,7 +220,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "m5.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -252,7 +245,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "m5.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -278,7 +270,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "m5.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -304,7 +295,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "m5.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -330,7 +320,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   ######################
   #c4.large
   ######################
@@ -359,7 +348,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "c4.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -385,7 +373,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "c4.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -411,7 +398,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "c4.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -437,7 +423,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "c4.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -463,7 +448,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "c4.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -489,7 +473,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   ######################
   #c5.large
   ######################
@@ -518,7 +501,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "c5.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -544,7 +526,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "c5.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -570,7 +551,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "c5.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -596,7 +576,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "c5.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -622,7 +601,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "c5.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -648,7 +626,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   ######################
   #r4.large
   ######################
@@ -677,7 +654,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "r4.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -703,7 +679,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "r4.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -729,7 +704,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "r4.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -755,7 +729,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "r4.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -781,7 +754,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "r4.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -807,7 +779,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   ######################
   #i3.large
   ######################
@@ -836,7 +807,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "i3.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -862,7 +832,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "i3.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -888,7 +857,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "i3.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -914,7 +882,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "i3.large"
     ami                    = "${lookup(var.amis, var.region)}"
@@ -940,7 +907,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
     user_data = "${data.template_file.userdata.rendered}"
   }
-
   launch_specification {
     instance_type          = "i3.large"
     ami                    = "${lookup(var.amis, var.region)}"
