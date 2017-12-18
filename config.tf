@@ -148,3 +148,20 @@ data "aws_iam_policy_document" "spot_fleet_autoscaling_role" {
 data "aws_vpc" "vpc" {
   id = "${var.vpc_id}"
 }
+
+#Get the latest amazon linux ami
+data "aws_ami" "amazon" {
+    most_recent = true
+
+    filter {
+        name   = "name"
+        values = ["${var.amazon_ami_name}"]
+    }
+
+    filter {
+        name   = "virtualization-type"
+        values = ["hvm"]
+    }
+
+    owners = ["amazon"] # Canonical
+}

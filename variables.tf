@@ -8,23 +8,10 @@ variable "valid_until" {
   default = "2022-11-04T20:44:20Z"
 }
 
-variable "amis" {
-  type = "map"
-
-  default = {
-    us-east-1      = "ami-ec33cc96"
-    us-east-2      = "ami-34032e51"
-    us-west-1      = "ami-d5d0e0b5"
-    us-west-2      = "ami-29f80351"
-    eu-west-2      = "ami-eb62708f"
-    eu-west-1      = "ami-13f7226a"
-    eu-central-1   = "ami-40d5672f"
-    ap-northeast-2 = "ami-7ee13b10"
-    ap-northeast-1 = "ami-21815747"
-    ap-southeast-2 = "ami-4f08e82d"
-    ap-southeast-1 = "ami-99f588fa"
-    ca-central-1   = "ami-9b54edff"
-  }
+variable "amazon_ami_name" {
+  type = "string"
+  description = "The name of the Amazon Linux ami to pull from"
+  default = "amzn-ami-*-amazon-ecs-optimized"
 }
 
 variable "subnet_ids" {
