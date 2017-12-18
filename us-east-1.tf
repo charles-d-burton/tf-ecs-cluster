@@ -19,7 +19,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   ######################
   launch_specification {
     instance_type          = "m5.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -45,7 +45,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "m5.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -71,7 +71,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "m5.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -97,7 +97,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "m5.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -123,7 +123,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "m5.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -149,7 +149,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "m5.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -178,7 +178,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   ######################
   launch_specification {
     instance_type          = "c5.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -204,7 +204,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "c5.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -230,7 +230,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "c5.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -256,7 +256,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "c5.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -282,7 +282,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "c5.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -308,7 +308,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "c5.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.12"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -337,7 +337,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   ######################
   launch_specification {
     instance_type          = "r4.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.15"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -363,7 +363,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "r4.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.15"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -389,7 +389,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "r4.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.15"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -415,7 +415,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "r4.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.15"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -441,7 +441,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "r4.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.15"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -467,7 +467,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "r4.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.15"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -496,7 +496,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   ######################
   launch_specification {
     instance_type          = "i3.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.17"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -522,7 +522,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "i3.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.17"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -548,7 +548,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "i3.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.17"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -574,7 +574,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "i3.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.17"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -600,7 +600,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "i3.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.17"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -626,7 +626,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "i3.large"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.17"
     key_name               = "${var.env}-${var.region}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -656,7 +656,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "m5.xlarge"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -681,7 +681,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   }
   launch_specification {
     instance_type          = "m5.xlarge"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -706,7 +706,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   }
   launch_specification {
     instance_type          = "m5.xlarge"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -731,7 +731,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   }
   launch_specification {
     instance_type          = "m5.xlarge"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -756,7 +756,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   }
   launch_specification {
     instance_type          = "m5.xlarge"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -781,7 +781,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   }
   launch_specification {
     instance_type          = "m5.xlarge"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -811,7 +811,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
 
   launch_specification {
     instance_type          = "c5.xlarge"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -836,7 +836,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   }
   launch_specification {
     instance_type          = "c5.xlarge"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -861,7 +861,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   }
   launch_specification {
     instance_type          = "c5.xlarge"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -886,7 +886,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   }
   launch_specification {
     instance_type          = "c5.xlarge"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -911,7 +911,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   }
   launch_specification {
     instance_type          = "c5.xlarge"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -936,7 +936,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   }
   launch_specification {
     instance_type          = "c5.xlarge"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.150"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -964,7 +964,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   ######################
   launch_specification {
     instance_type          = "r4.xlarge"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.20"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -989,7 +989,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   }
   launch_specification {
     instance_type          = "r4.xlarge"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.20"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -1014,7 +1014,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   }
   launch_specification {
     instance_type          = "r4.xlarge"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.20"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -1039,7 +1039,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   }
   launch_specification {
     instance_type          = "r4.xlarge"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.20"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -1064,7 +1064,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   }
   launch_specification {
     instance_type          = "r4.xlarge"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.20"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
@@ -1089,7 +1089,7 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   }
   launch_specification {
     instance_type          = "r4.xlarge"
-    ami                    = "${var.amazon_ami_name}"
+    ami                    = "${data.aws_ami.amazon.id}"
     spot_price             = "0.20"
     key_name               = "${var.key_name}"
     iam_instance_profile   = "${aws_iam_instance_profile.ecs.name}"
