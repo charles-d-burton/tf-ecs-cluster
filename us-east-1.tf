@@ -1159,7 +1159,7 @@ resource "aws_appautoscaling_target" "us_east_1_service_target" {
   max_capacity = 50
   min_capacity = "${var.cluster_size}"
   resource_id  = "spot-fleet-request/${aws_spot_fleet_request.us_east1_fleet.id}"
-  role_arn     = "${data.aws_iam_role.ecs_service_autoscaling.arn}"
+  role_arn     = "${data.aws_iam_role.ecs_service_autoscaling.name}"
 
   #role_arn           = "${aws_iam_role.autoscaling_role.arn}"  
   #for more see this bug https://github.com/terraform-providers/terraform-provider-aws/issues/240
