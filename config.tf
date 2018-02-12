@@ -1,3 +1,5 @@
+data "aws_caller_identity" "current" {}
+
 #Policy document for the entire spot fleet cluster to assume the spot fleet role
 data "aws_iam_policy_document" "spot_fleet_role_policy" {
   statement {
