@@ -167,8 +167,3 @@ data "aws_ami" "amazon" {
 
   owners = ["amazon"] # Canonical
 }
-
-#Fix for this terraform issue https://github.com/terraform-providers/terraform-provider-aws/issues/240
-data "aws_iam_role" "ecs_service_autoscaling" {
-  name = "AWSServiceRoleForApplicationAutoScaling_ECSService"
-}
