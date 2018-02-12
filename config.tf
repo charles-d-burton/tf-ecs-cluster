@@ -151,17 +151,22 @@ data "aws_vpc" "vpc" {
 
 #Get the latest amazon linux ami
 data "aws_ami" "amazon" {
-    most_recent = true
+  most_recent = true
 
-    filter {
-        name   = "name"
-        values = ["${var.amazon_ami_name}"]
-    }
+  filter {
+    name   = "name"
+    values = ["${var.amazon_ami_name}"]
+  }
 
-    filter {
-        name   = "virtualization-type"
-        values = ["hvm"]
-    }
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
 
-    owners = ["amazon"] # Canonical
+  owners = ["amazon"] # Canonical
+}
+
+#Fix for this terraform issue https://github.com/terraform-providers/terraform-provider-aws/issues/240
+data "aws_iam_role" "ecs_service_autoscaling" {
+  name = "AWSServiceRoleForApplicationAutoScaling_ECSService"
 }
