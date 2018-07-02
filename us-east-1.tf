@@ -9,10 +9,6 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   replace_unhealthy_instances = true
   wait_for_fulfillment        = true
 
-  tags {
-    Name = "${var.cluster_name}"
-  }
-
   #TODO: Figure this out, relationship to other resources is problem
   lifecycle {
     create_before_destroy = true
@@ -37,11 +33,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -63,11 +56,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -96,6 +86,10 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvdcz"
     }
 
+    tags {
+      Name = "${var.cluster_name}"
+    }
+
     user_data = "${data.template_file.userdata.rendered}"
   }
 
@@ -115,11 +109,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -141,11 +132,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -167,11 +155,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -196,11 +181,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -222,11 +204,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -248,11 +227,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -274,11 +250,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -300,11 +273,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -326,11 +296,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -355,11 +322,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -381,11 +345,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -407,11 +368,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -433,11 +391,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -459,11 +414,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -485,11 +437,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -514,11 +463,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -540,11 +486,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -566,11 +509,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -592,11 +532,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -618,11 +555,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -644,11 +578,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -674,11 +605,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -699,11 +627,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -724,11 +649,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -749,11 +671,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -774,11 +693,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -799,11 +715,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -829,11 +742,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -854,11 +764,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -879,11 +786,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -904,11 +808,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -929,11 +830,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -954,11 +852,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -982,11 +877,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -1007,11 +899,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -1032,11 +921,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -1057,11 +943,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -1082,11 +965,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
@@ -1107,11 +987,8 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
       device_name           = "/dev/xvda"
     }
 
-    ebs_block_device = {
-      volume_type           = "gp2"
-      volume_size           = "${var.volume_size}"
-      delete_on_termination = "true"
-      device_name           = "/dev/xvdcz"
+    tags {
+      Name = "${var.cluster_name}"
     }
 
     user_data = "${data.template_file.userdata.rendered}"
