@@ -53,6 +53,7 @@ data "aws_iam_policy_document" "spot_fleet_policy" {
       "ec2:DescribeSpotFleetRequestHistory",
       "ec2:ModifySpotFleetRequest",
       "ec2:RequestSpotFleet",
+      "ec2:CreateTags",
       "iam:PassRole",
     ]
 
@@ -102,6 +103,7 @@ data "aws_iam_policy_document" "spot_fleet_instance_policy" {
       "ec2:DescribeSpotFleetRequestHistory",
       "ec2:ModifySpotFleetRequest",
       "ec2:RequestSpotFleet",
+      "ec2:CreateTags",
       "logs:CreateLogStream",
       "logs:PutLogEvents",
       "logs:CreateLogGroup",

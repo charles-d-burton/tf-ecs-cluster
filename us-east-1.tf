@@ -9,6 +9,10 @@ resource "aws_spot_fleet_request" "us_east1_fleet" {
   replace_unhealthy_instances = true
   wait_for_fulfillment        = true
 
+  tags {
+    Name = "${var.cluster_name}"
+  }
+
   #TODO: Figure this out, relationship to other resources is problem
   lifecycle {
     create_before_destroy = true

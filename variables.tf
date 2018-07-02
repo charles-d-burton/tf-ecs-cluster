@@ -9,9 +9,9 @@ variable "valid_until" {
 }
 
 variable "amazon_ami_name" {
-  type = "string"
+  type        = "string"
   description = "The name of the Amazon Linux ami to pull from"
-  default = "amzn-ami-*-amazon-ecs-optimized"
+  default     = "amzn-ami-*-amazon-ecs-optimized"
 }
 
 variable "subnet_ids" {
@@ -22,6 +22,12 @@ variable "subnet_ids" {
 variable "vpc_id" {}
 
 variable "key_name" {}
+
+variable "cluster_name" {
+  type        = "string"
+  description = "name to assign to cluster nodes"
+  default     = "spot_fleet_instance"
+}
 
 #Re-enable once consul cluster is available
 //variable "consul_instance_sg" {}
