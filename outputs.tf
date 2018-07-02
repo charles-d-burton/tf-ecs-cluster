@@ -15,3 +15,7 @@ output "cluster_name" {
 output "cluster_arn" {
   value = "${aws_ecs_cluster.ecs_cluster.id}"
 }
+
+output "fleet_request_id" {
+  value = "${join("", aws_spot_fleet_request.us_east1_fleet.*.id)}"
+}

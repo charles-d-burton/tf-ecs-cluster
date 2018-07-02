@@ -1111,29 +1111,9 @@ resource "aws_cloudwatch_metric_alarm" "us_east_1_service_highcpu_scaleup" {
     "${aws_appautoscaling_policy.us_east_1_service_up_policy.arn}",
   ]
 
-  depends_on = ["aws_appautoscaling_policy.us_east_1_service_up_policy"]
-}
-
-resource "aws_cloudwatch_metric_alarm" "us_east_1_service_highcpu_scaledown" {
-  count               = "${var.region == "us-east-1" ? 1 : 0}"
-  alarm_name          = "ecs-${var.env}-${var.region}-scaledown"
-  comparison_operator = "LessThanOrEqualToThreshold"
-  evaluation_periods  = "2"
-  metric_name         = "CPUUtilization"
-  namespace           = "AWS/ECS"
-  period              = "60"
-  statistic           = "Average"
-  threshold           = "60"
-
-  alarm_description = "CPU Autoscaling alarm to scale down"
-
-  dimensions {
-    ClusterName = "ecs-${var.env}-${var.region}"
-  }
-
-  alarm_actions = [
+  ok_actions = [
     "${aws_appautoscaling_policy.us_east_1_service_down_policy.arn}",
   ]
 
-  depends_on = ["aws_appautoscaling_policy.us_east_1_service_down_policy"]
+  depends_on = ["aws_appautoscaling_policy.us_east_1_service_up_policy"]
 }
