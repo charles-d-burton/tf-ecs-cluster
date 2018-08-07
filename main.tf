@@ -16,36 +16,21 @@ resource "aws_security_group" "ecs_instance_security_group" {
   description = "Instance security group for ECS"
   vpc_id      = "${var.vpc_id}"
 
-  ingress {
-    from_port   = 1
-    to_port     = 65535
-    protocol    = "TCP"
-    cidr_blocks = ["${data.aws_vpc.vpc.cidr_block}"]
-  }
-
-  /*
-*  ingress {
-*    from_port = 8300
-*    to_port = 8600
-*    protocol = "TCP"
-*    security_groups = ["${var.consul_instance_sg}"]
-*  }
-*
-*
-*  ingress {
-*    from_port       = 8300
-*    to_port         = 8600
-*    protocol        = "UDP"
-*    security_groups = ["${var.consul_instance_sg}"]
-*  }
-*/
-
   egress {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+}
+
+resource "aws_security_group_rule" "vpc_ingress" {
+  type = "ingress"
+  from_port = 1
+  to_port = 65535
+  protocol = "TCP"
+  cidr_blocks = ["${data.aws_vpc.vpc.cidr_block}"]
+  security_group_id = "${aws_security_group.ecs_instance_security_group.id}"
 }
 
 #Create the ECS cluster
